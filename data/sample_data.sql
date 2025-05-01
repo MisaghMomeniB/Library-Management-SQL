@@ -16,7 +16,7 @@ INSERT INTO books (title, author_id, category_id, year_published, total_copies, 
 ('قصه‌های مجید', 2, 2, 1990, 3, 3),
 ('غرور و تعصب', 3, 3, 1813, 4, 4);
 
--- اعضا
+-- Members
 INSERT INTO members (name, email, join_date) VALUES 
 ('علی رضایی', 'ali@email.com', '2024-01-10'),
 ('سارا محمدی', 'sara@email.com', '2024-02-20');
