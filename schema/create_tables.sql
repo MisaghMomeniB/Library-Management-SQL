@@ -34,3 +34,15 @@ CREATE TABLE members (
     email VARCHAR(100) UNIQUE,
     join_date DATE DEFAULT CURRENT_DATE
 );
+
+-- Borrowing Table
+CREATE TABLE loans (
+    loan_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    loan_date DATE DEFAULT CURRENT_DATE,
+    due_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
