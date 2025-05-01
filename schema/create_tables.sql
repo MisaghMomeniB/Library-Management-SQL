@@ -1,20 +1,20 @@
--- Create Database
-CREATE DATABASE library_db;
+-- ساخت دیتابیس
+CREATE DATABASE IF NOT EXISTS library_db;
 USE library_db;
 
--- Authors Table
+-- جدول نویسندگان
 CREATE TABLE authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
 
--- Categories Table
+-- جدول دسته‌بندی‌ها
 CREATE TABLE categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
 
--- Books Table
+-- جدول کتاب‌ها
 CREATE TABLE books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(225) NOT NULL,
@@ -27,27 +27,27 @@ CREATE TABLE books (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
--- Members Table
+-- جدول اعضا
 CREATE TABLE members (
     member_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
-    join_date DATE DEFAULT CURRENT_DATE
+    join_date DATE
 );
 
--- Loans Table
+-- جدول امانت‌ها
 CREATE TABLE loans (
     loan_id INT AUTO_INCREMENT PRIMARY KEY,
     book_id INT,
     member_id INT,
-    loan_date DATE DEFAULT CURRENT_DATE,
+    loan_date DATE,
     due_date DATE,
     return_date DATE,
     FOREIGN KEY (book_id) REFERENCES books(book_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
 
--- Penalties Table
+-- جدول جریمه‌ها
 CREATE TABLE penalties (
     penalty_id INT AUTO_INCREMENT PRIMARY KEY,
     loan_id INT,
