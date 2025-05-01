@@ -9,3 +9,9 @@ INSERT INTO categories (name) VALUES
 ('رمان'),
 ('داستان کوتاه'),
 ('ادبیات کلاسیک');
+
+-- Books
+INSERT INTO books (title, author_id, category_id, year_published, total_copies, available_copies) VALUES 
+('مدیر مدرسه', 1, 1, 1958, 5, 5),
+('قصه‌های مجید', 2, 2, 1990, 3, 3),
+('غرور و تعصب', 3, 3, 1813, 4, 4);
