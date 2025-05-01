@@ -46,3 +46,12 @@ CREATE TABLE loans (
     FOREIGN KEY (book_id) REFERENCES books(book_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
+
+-- Fines Table
+CREATE TABLE penalties (
+    penalty_id INT AUTO_INCREMENT PRIMARY KEY,
+    loan_id INT,
+    amount DECIMAL(6,2),
+    paid BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (loan_id) REFERENCES loans(loan_id)
+);
