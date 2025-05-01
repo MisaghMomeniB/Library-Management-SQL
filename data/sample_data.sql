@@ -1,3 +1,5 @@
+USE library_db;
+
 -- Authors
 INSERT INTO authors (name) VALUES
 ('Misagh Momeni'),
