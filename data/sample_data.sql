@@ -20,3 +20,8 @@ INSERT INTO books (title, author_id, category_id, year_published, total_copies, 
 INSERT INTO members (name, email, join_date) VALUES 
 ('علی رضایی', 'ali@email.com', '2024-01-10'),
 ('سارا محمدی', 'sara@email.com', '2024-02-20');
+
+-- Borrowings
+INSERT INTO loans (book_id, member_id, loan_date, due_date, return_date) VALUES 
+(1, 1, '2024-03-01', '2024-03-10', '2024-03-09'),
+(2, 2, '2024-03-05', '2024-03-15', NULL); -- هنوز برنگشته
