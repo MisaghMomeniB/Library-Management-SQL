@@ -24,4 +24,8 @@ INSERT INTO members (name, email, join_date) VALUES
 -- Borrowings
 INSERT INTO loans (book_id, member_id, loan_date, due_date, return_date) VALUES 
 (1, 1, '2024-03-01', '2024-03-10', '2024-03-09'),
-(2, 2, '2024-03-05', '2024-03-15', NULL); -- هنوز برنگشته
+(2, 2, '2024-03-05', '2024-03-15', NULL);
+
+-- Fines
+INSERT INTO penalties (loan_id, amount, paid) VALUES 
+(2, 15000, FALSE);
