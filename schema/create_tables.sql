@@ -16,3 +16,11 @@ CREATE TABLE categories (
     name VARCHAR(100) NOT NULL,
     description TEXT
 );
+
+-- Publishers table
+CREATE TABLE publishers (
+    publisher_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    address TEXT,
+    contact_email VARCHAR(100)
+);
