@@ -24,3 +24,20 @@ CREATE TABLE publishers (
     address TEXT,
     contact_email VARCHAR(100)
 );
+
+-- Books table
+CREATE TABLE books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(225) NOT NULL,
+    author_id INT,
+    category_id INT,
+    publisher_id INT,
+    isbn VARCHAR(20) UNIQUE,
+    year_published INT,
+    total_copies INT DEFAULT 1,
+    available_copies INT DEFAULT 1,
+    description TEXT,
+    FOREIGN KEY (author_id) REFERENCES authors(author_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id),
+    FOREIGN KEY (publisher_id) REFERENCES publishers(publisher_id)
+);
