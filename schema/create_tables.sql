@@ -75,3 +75,12 @@ CREATE TABLE penalties (
     issue_date DATE,
     FOREIGN KEY (loan_id) REFERENCES loans(loan_id)
 );
+
+-- Staff table
+CREATE TABLE staff (
+    staff_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    role ENUM('Librarian', 'Assistant', 'Admin'),
+    hire_date DATE
+);
