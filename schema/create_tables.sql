@@ -84,3 +84,15 @@ CREATE TABLE staff (
     role ENUM('Librarian', 'Assistant', 'Admin'),
     hire_date DATE
 );
+
+-- Book reviews table
+CREATE TABLE book_reviews (
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    comment TEXT,
+    review_date DATE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
