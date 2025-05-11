@@ -52,3 +52,16 @@ CREATE TABLE members (
     join_date DATE,
     membership_type ENUM('Standard', 'Premium') DEFAULT 'Standard'
 );
+
+-- Loans table
+CREATE TABLE loans (
+    loan_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    loan_date DATE,
+    due_date DATE,
+    return_date DATE,
+    status ENUM('On Loan', 'Returned', 'Overdue') DEFAULT 'On Loan',
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
