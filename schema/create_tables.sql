@@ -41,3 +41,14 @@ CREATE TABLE books (
     FOREIGN KEY (category_id) REFERENCES categories(category_id),
     FOREIGN KEY (publisher_id) REFERENCES publishers(publisher_id)
 );
+
+-- Members table
+CREATE TABLE members (
+    member_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    phone_number VARCHAR(15),
+    address TEXT,
+    join_date DATE,
+    membership_type ENUM('Standard', 'Premium') DEFAULT 'Standard'
+);
