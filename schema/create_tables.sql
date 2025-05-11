@@ -96,3 +96,14 @@ CREATE TABLE book_reviews (
     FOREIGN KEY (book_id) REFERENCES books(book_id),
     FOREIGN KEY (member_id) REFERENCES members(member_id)
 );
+
+-- Book reservations table
+CREATE TABLE reservations (
+    reservation_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    reservation_date DATE,
+    status ENUM('Active', 'Cancelled', 'Completed') DEFAULT 'Active',
+    FOREIGN KEY (book_id) REFERENCES books(book_id),
+    FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
