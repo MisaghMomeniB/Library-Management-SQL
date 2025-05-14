@@ -27,4 +27,8 @@ INSERT INTO members (name, email, join_date) VALUES
 -- LOANS table: inserting records of book loans
 INSERT INTO loans (book_id, member_id, loan_date, due_date, return_date) VALUES
 (1, 1, '2024-03-01', '2024-03-10', '2024-03-09'), -- Ali borrowed book 1 and returned it on time
-(2, 2, '2024-03-05', '2024-03-15', NULL);         -- Sara borrowed book 2 but hasn’t returned it yet
+(2,
+
+-- PENALTIES table: inserting a penalty for a late return
+INSERT INTO penalties (loan_id, amount, paid) VALUES
+(2, 15000, FALSE); -- A fine of 15000 is assigned to loan ID 2 and has not been paid yet
