@@ -23,3 +23,8 @@ INSERT INTO books (title, author_id, category_id, year_published, total_copies, 
 INSERT INTO members (name, email, join_date) VALUES
 ('Ali Rezaei', 'ali@email.com', '2024-01-10'),       -- Member who joined on Jan 10, 2024
 ('Sara Mohammadi', 'sara@email.com', '2024-02-20');  -- Member who joined on Feb 20, 2024
+
+-- LOANS table: inserting records of book loans
+INSERT INTO loans (book_id, member_id, loan_date, due_date, return_date) VALUES
+(1, 1, '2024-03-01', '2024-03-10', '2024-03-09'), -- Ali borrowed book 1 and returned it on time
+(2, 2, '2024-03-05', '2024-03-15', NULL);         -- Sara borrowed book 2 but hasn’t returned it yet
